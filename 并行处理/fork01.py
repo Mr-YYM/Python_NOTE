@@ -2,9 +2,11 @@
 
 import os
 
+
 def child():
     print('这是子进程哦，pid：', os.getpid())
     os._exit(0)
+
 
 def parent():
     while True:
