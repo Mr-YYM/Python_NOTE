@@ -14,3 +14,8 @@ def timethis(func):
         print(func.__name__, end-start)
         return result
     return wrapper
+
+
+@timethis
+def m_sleep(m):
+    time.sleep(m/1000)
