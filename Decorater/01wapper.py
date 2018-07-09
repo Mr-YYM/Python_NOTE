@@ -1,15 +1,13 @@
 import time
-from functools import wraps
 
 
 def timethis(func):
     """
     Decorator that reports the execution time.
     """
-    @wraps(func)
-    def wrapper(*args, **kwargs):
+    def wrapper():
         start = time.time()
-        result = func(*args, **kwargs)
+        result = func()
         end = time.time()
         print(func.__name__, end-start)
         return result
@@ -17,5 +15,6 @@ def timethis(func):
 
 
 @timethis
-def m_sleep(m):
-    time.sleep(m/1000)
+def m_sleep():
+    print('sleep 1秒')
+    time.sleep(1)
